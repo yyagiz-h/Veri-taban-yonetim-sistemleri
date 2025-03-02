@@ -1,0 +1,338 @@
+Soru 1:
+
+|ÖğrenciNo | Ad     | Soyad      | DersAdi   | VizeNotu
+-------------------------------------------------------
+| 20001  | Ahmet    | Yılmaz     | Matematik | 85
+| 20002  | Ayşe     | Kaya       | Matematik | 78
+| 20003  | Mehmet   | Demir      | Matematik | 92
+| 20004  | Zeynep   | Çelik      | Matematik | 88
+| 20005  | Ali      | Şahin      | Matematik | 74
+| 20006  | Emre     | Kara       | Matematik | 63
+| 20007  | Elif     | Aydın      | Matematik | 90
+| 20008  | Fatma    | Koç        | Matematik | 69
+| 20009  | Burak    | Yıldız     | Matematik | 82
+| 20010  | Deniz    | Aslan      | Matematik | 77
+| 20011  | Gizem    | Eren       | Matematik | 94
+| 20012  | Hakan    | Çetin      | Matematik | 56
+| 20013  | İrem     | Tan        | Matematik | 83
+| 20014  | Kadir    | Bulut      | Matematik | 72
+| 20015  | Leyla    | Güneş      | Matematik | 88
+| 20016  | Mert     | Şen        | Matematik | 91
+| 20017  | Naz      | Demirci    | Matematik | 64
+| 20018  | Okan     | Işık       | Matematik | 75
+| 20019  | Pelin    | Öztürk     | Matematik | 87
+| 20020  | Serkan   | Tuna       | Matematik | 60
+| 20021  | Tuğba    | Korkmaz    | Matematik | 79
+| 20022  | Ufuk     | Akalın     | Matematik | 67
+| 20023  | Volkan   | Polat      | Matematik | 92
+| 20024  | Yasemin  | Acar       | Matematik | 81
+| 20025  | Zeki     | Çelik      | Matematik | 73
+| 20026  | Aslı     | Yalçın     | Matematik | 85
+| 20027  | Barış    | Özdemir    | Matematik | 78
+| 20028  | Cem      | Kaya       | Matematik | 90
+| 20029  | Derya    | Şahin      | Matematik | 66
+| 20030  | Ege      | Turan      | Matematik | 84
+
+ Tablo Yapısı ve Açıklamaları:
+OgrenciNo:
+
+Öğrencinin 5 haneli, benzersiz numarasıdır (Okul numarası).
+Örnek: 20001, 20030 gibi.
+Bu numara her öğrenciyi tekil olarak tanımlar.
+Ad:
+
+Öğrencinin adı .
+Örnek: Ahmet, Zeynep, Mert gibi.
+Soyad:
+
+Öğrencinin soyadı .
+Örnek: Yılmaz, Demir, Çelik gibi.
+DersAdi:
+
+Öğrencinin notunun ait olduğu dersin adı.
+Bu tabloda tüm öğrenciler için ders Matematik olarak belirlenmiş.
+VizeNotu:
+
+Öğrencinin Matematik dersi için aldığı vize notu.
+Örnek: 85, 92, 63 gibi puanlar. 
+
+Soru 2: 
+
+Benzerlikler:
+Bilgi Saklama:
+
+İkisi de bilgileri (verileri) kaydetmeye yarar.
+Mesela: Öğrenci notlarını bir Excel dosyasına yazmak = Geleneksel sistem, aynı bilgileri bir veritabanına (MySQL, Oracle gibi) eklemek = VTYS.
+Erişim:
+
+Her ikisinde de istediğimiz bilgiye ulaşabiliriz.
+Örneğin, sınıftaki tüm öğrencilerin notlarına ulaşmak için hem dosyaları açabilir hem de veritabanından sorgulayabiliriz.
+
+
+Geleneksel Dosya Sistemi vs. Veritabanı Yönetim Sistemi (VTYS) - Farklılıklar
+
+Özellik                | Geleneksel Dosya Sistemi                                | Veritabanı Yönetim Sistemi (VTYS)
+-----------------------|---------------------------------------------------------|-----------------------------------------------
+Bilgiye Ulaşma Hızı    | Yavaş – Aradığın bilgiyi tek tek tararsın.              | Hızlı – Bir komutla (sorgu) hemen bulursun.   
+Güncelleme ve Silme    | Zor – Yanlış yaparsan tek tek düzeltmen gerekir.        | Kolay – Bir komutla topluca güncelleyebilirsin.
+Veri Düzeni            | Karışık olabilir – Her dosyada farklı bilgiler vardır.  | Düzenli – Bilgiler tablo halinde saklanır.    
+Veri Güvenliği         | Düşük – Herkes erişebilir, yanlışlıkla silinebilir.     | Yüksek – Kimlerin erişeceğini belirleyebilirsin.
+Veri Tekrarı           | Aynı bilgiyi birden fazla dosyada tekrar yazarsın.      | Tek bir defa kaydedersin, herkes aynı bilgiyi kullanır.
+Örnek Durum            | Sınıf listesini bir not defterine yazmak.               | Öğrenci otomasyon sisteminde notları görmek.  
+
+Soru 3:
+
+1. Hızlı ve Kolay Erişim
+
+- VTYS: Büyük miktarda veriye saniyeler içinde ulaşabilirsin. SQL gibi sorgu dilleriyle belirli bir bilgiye hemen erişebilirsin.
+
+- Geleneksel Sistem: Dosya içinde arama yapmak zaman alır. Binlerce satır arasından elle aramak zor olabilir.
+
+2. Veri Tutarlılığı ve Bütünlüğü
+
+- VTYS: Aynı bilgiyi bir kez saklar ve tüm sistem bu kaynağa erişir. Veri bütünlüğünü kurallar (anahtarlar, kısıtlamalar) ile korur.
+
+- Geleneksel Sistem: Aynı bilgiyi birden fazla dosyada tekrar yazman gerekebilir. Bu, bilgi tutarsızlığına yol açar.
+
+3. Veri Güvenliği
+
+- VTYS: Kimlerin hangi verilere erişebileceğini belirleyebilirsin (yetkilendirme ve kullanıcı rolleri).
+
+- Geleneksel Sistem: Dosyaya erişen herkes bilgileri görebilir veya yanlışlıkla silebilir.
+
+4. Karmaşık Sorgular Yapabilme
+
+- VTYS: Karmaşık ve detaylı sorgular yapabilirsin (örneğin: "Geçen yılın en yüksek not alan öğrencisini göster").
+
+- Geleneksel Sistem: Böyle karmaşık aramalar için tüm dosyaları tek tek incelemen gerekir.
+
+5. Çoklu Kullanıcı Desteği
+
+- VTYS: Aynı anda birçok kişi aynı veritabanına erişip işlem yapabilir.
+
+- Geleneksel Sistem: Bir kişi dosya üzerinde çalışırken, başkası aynı anda düzenleyemez.
+
+Soru 4: 
+
+ Veritabanının Görevi Nedir?
+
+- Veritabanının temel görevi, bilgileri (verileri) düzenli bir şekilde saklamak, bu bilgilere hızlıca ulaşmak ve gerektiğinde güncellemektir. Bilgileri bir arada tutarak karışıklığı önler ve kullanıcıların verilere kolayca erişmesini sağlar.
+
+Veritabanının Kullanıldığı Alanlar:
+
+-Eğitim Kurumları (Okullar ve Üniversiteler):
+
+* Öğrenci kayıtları, notlar, ders programları ve öğretmen bilgilerini saklar.
+* Örnek: Öğrenci otomasyon sistemleri (Öğrenci bilgilerini saklama ve notları sorgulama).
+
+- Sağlık Sektörü:
+
+* Hasta kayıtları, randevular, reçeteler ve tıbbi geçmiş verilerini saklar.
+* Örnek: Hastanelerde kullanılan Hasta Bilgi Yönetim Sistemleri (HBYS).
+
+- E-Ticaret Siteleri:
+
+* Ürün bilgileri, müşteri siparişleri ve stok yönetimi için kullanılır.
+ *Örnek: Amazon, Hepsiburada gibi online alışveriş sitelerinin altyapısı.
+
+- Devlet Kurumları:
+
+* Nüfus bilgileri, kimlik kayıtları ve kamu hizmetleri için kullanılır.
+ *Örnek: e-Devlet sistemi veya nüfus müdürlüklerindeki kimlik kayıtları.
+
+Soru 5:
+
+
+Tablo, Satır ve Sütun Kavramları
+
+   Tablo Nedir?
+- Bilgileri düzenli bir şekilde sakladığımız yapıdır.
+- Okulda yoklama defteri gibi düşünebilirsin.
+- Tabloda bilgiler satır ve sütunlar halinde bulunur.
+
+Örnek Bir Tablo:
+
+| Öğrenci No | Adı    | Notu |
+|------------|--------|------|
+| 101        | Ayşe   | 85   |
+| 102        | Mehmet | 90   |
+| 103        | Zeynep | 78   |
+
+   Satır Nedir?
+- Yatay (soldan sağa) ilerleyen kısımdır.
+- Her satır, bir kişiye veya nesneye ait tüm bilgileri gösterir.
+
+Örnek:
+- 1. Satır: 101, Ayşe, 85 (Bu satırda Ayşe’nin tüm bilgileri var.)
+- 2. Satır: 102, Mehmet, 90 (Bu satırda Mehmet’in bilgileri var.)
+
+   Sütun Nedir?
+- Dikey (yukarıdan aşağıya) ilerleyen kısımdır.
+- Aynı türdeki bilgileri gösterir.
+
+Örnek:
+- Öğrenci No sütunu: 101, 102, 103 (Tüm öğrencilerin numaraları burada.)
+- Adı sütunu: Ayşe, Mehmet, Zeynep (Tüm öğrencilerin isimleri burada.)
+
+
+Soru 6:
+
+
+Birincil Anahtar (Primary Key) ve Yabancı Anahtar (Foreign Key) Kavramları
+
+ + Birincil Anahtar (Primary Key) Nedir?
+- Bir tablodaki her satırı (kaydı) benzersiz (tekil) olarak tanımlayan alandır.
+- Aynı değerden birden fazla olamaz ve boş (NULL) bırakılmaz.
+- Tablodaki her satırı tanımak için kullanılır.
+
+* Örnek:
+Bir öğrenci tablosunda:
+
+| Öğrenci No (PK) | Adı    | Notu |
+|-----------------|--------|------|
+| 101             | Ayşe   | 85   |
+| 102             | Mehmet | 90   |
+| 103             | Zeynep | 78   |
+
+- Burada "Öğrenci No" birincil anahtardır. Her öğrenciye özel olduğu için aynı numara iki kez kullanılamaz.
+
+ * Yabancı Anahtar (Foreign Key) Nedir?
+- Bir tabloda bulunan ve başka bir tablodaki birincil anahtara referans veren (bağlayan) alandır.
+- İki tablo arasında ilişki kurar ve verilerin tutarlılığını sağlar.
+
+* Örnek:
+
+Öğrenci Tablosu:
+
+| Öğrenci No (PK) | Adı    |
+|-----------------|--------|
+| 101             | Ayşe   |
+| 102             | Mehmet |
+
+Notlar Tablosu:
+
+| Not ID (PK) | Öğrenci No (FK) | Ders      | Notu |
+|-------------|-----------------|-----------|------|
+| 1           | 101             | Matematik | 85   |
+| 2           | 102             | Fizik     | 90   |
+
+- "Öğrenci No" alanı, Notlar tablosunda yabancı anahtar olarak kullanılmıştır.
+- Bu, Notlar tablosundaki bilgilerin Öğrenci tablosunda karşılığı olmasını garanti eder.
+
+* Birincil Anahtar ve Yabancı Anahtar Arasındaki Farklar:
+
+| Özellik            | Birincil Anahtar (PK)                    | Yabancı Anahtar (FK)                                      |
+|--------------------|------------------------------------------|-----------------------------------------------------------|
+| Tanımı             | Tablodaki her satırı benzersiz tanımlar. | Başka bir tablodaki birincil anahtara referans verir.     |
+| Tekrarlanabilirlik | Tekil olmalı (aynı değer tekrar edemez). | Tekrar edebilir (aynı öğrenci farklı derslerde olabilir). |
+| Boş (NULL) Değer   | Boş olamaz.                              | Boş olabilir (isteğe bağlı ilişki için).                  |
+| İlişki Kurma       | Tablonun kimliğini belirler.             | İki tablo arasında bağlantı kurar.                        |
+| Kapsam             | Aynı tabloda bulunur.                    | Başka bir tabloya işaret eder.                            |
+
+Soru 7:
+
+| Kullanıcı Türü            | Görevi                                       |
+|---------------------------|----------------------------------------------|
+| Yönetici                  | Veritabanını yönetme ve bakımını yapma       |
+| Geliştirici               | Uygulama geliştirme ve veri modelleme        |
+| Son Kullanıcı             | Veri erişimi ve temel işlemleri yapma        |
+| Güvenlik Yöneticisi       | Kullanıcı yetkilendirme ve güvenlik yönetimi |
+| Yedekleme Operatörü       | Yedekleme ve geri yükleme işlemleri          |
+
+
+Soru 8:
+
+Veritabanı Kullanıcıları ve Yetkilendirme Yapısı
+
+* Veritabanı Yapısı:
+A Üniversitesinin öğrenci bilgi sistemi
+Tablolar:
+1. Öğrenciler: Öğrenci bilgileri (Öğrenci No, Ad, Soyad, Bölüm, Notlar)
+2. Dersler: Ders bilgileri (Ders Kodu, Ders Adı, Öğretim Görevlisi)
+3. Notlar: Öğrencilerin notları (Öğrenci No, Ders Kodu, Vize, Final)
+4. Kullanıcılar: Sistemdeki kullanıcılar (Kullanıcı Adı, Rol, Şifre)
+
+* Kullanıcı Rolleri ve Yetkileri:
+
+| Kullanıcı Rolü       | Erişim Yetkileri                                                |
+|----------------------|-----------------------------------------------------------------|
+| Admin (Yönetici)     | Tüm tabloları oluşturabilir, güncelleyebilir, silebilir.        |
+| Öğretim Görevlisi    | Kendi verdiği derslerin notlarını görebilir ve güncelleyebilir. |
+| Öğrenci İşleri       | Öğrenci bilgilerini ekleyebilir, güncelleyebilir.               |
+| Öğrenci              | Sadece kendi notlarını görüntüleyebilir.                        |
+
+Soru 9:
+
+
+Veritabanı (Database) ve VTYS (Veritabanı Yönetim Sistemi) Arasındaki Farklar
+
+| Özellik                | Veritabanı (Database)                       | Veritabanı Yönetim Sistemi (VTYS)                            |
+|------------------------|---------------------------------------------|-------------------------------------------------             |
+| Tanım                  | Verilerin saklandığı yapıdır.               | Veritabanlarını yönetmek için kullanılan yazılımdır.         |
+| İçerik                 | Tablolar, kayıtlar, alanlar, ilişkiler vb.  | Veritabanını yönetmeye yönelik araçlar ve komutlar.          |
+| Görev                  | Verileri saklama ve erişim sağlama.         | Veritabanı üzerinde işlem yapma (ekleme, silme, güncelleme). |
+| Kapsam                 | Sadece ham veriyi içerir.                   | Veri ve yönetim araçlarını içerir.                           |
+| Örnek                  | Öğrenci bilgilerini saklayan bir tablo.     | MySQL, PostgreSQL, Oracle, Microsoft SQL Server.             |
+| Kullanım Alanı         | Verilerin depolanması.                      | Büyük çaplı sistemlerde veri işleme ve yönetim.              |
+| İşlevsellik            | Doğrudan kullanıcı etkileşimi yoktur.       | Kullanıcıların veritabanında işlem yapmasını sağlar.         |
+| Güvenlik               | Kendi başına güvenlik özellikleri içermez.  | Yetkilendirme, şifreleme ve erişim kontrolü sağlar.          |
+| İlişki                 | VTYS tarafından yönetilen bir yapıdır.      | Veritabanını kontrol eden sistemdir.                         |
+
+
+
+Soru 10:
+
+ İlişkisel Veri Modeli Nedir?
+
+- İlişkisel veri modeli, verileri tablolar (relation) halinde organize eden bir veritabanı modelidir. Bu modelde, her bir tablo bir ilişki (relation) olarak adlandırılır ve her tablo belirli bir konuyla ilgili verileri içerir.
+
+- Bu modelin temel amacı, veriler arasında ilişkiler kurarak bilgiyi organize etmek ve hızlı erişim sağlamaktır. 1970 yılında Edgar F. Codd tarafından geliştirilmiştir.
+
+
+
+Soru 11: 
+
+
+ÖĞRENCİ BİLGİ SİSTEMİ VERİTABANI TASARIMI
+
+1. Tablolar ve Alanlar:
+
+ÖĞRENCİLER TABLOSU:
+| Alan Adı      | Veri Türü      | Açıklama                                |
+|---------------|----------------|-----------------------------------------|
+| ogrenci_no    | INT (PK)       | Öğrenciye özel benzersiz numara         |
+| ad            | VARCHAR(50)    | Öğrenci adı                             |
+| soyad         | VARCHAR(50)    | Öğrenci soyadı                          |
+| dogum_tarihi  | DATE           | Öğrencinin doğum tarihi                 |
+| bolum         | VARCHAR(100)   | Öğrencinin bağlı olduğu bölüm           |
+| sinif         | INT            | Öğrencinin sınıfı (1, 2, 3, 4)          |
+| telefon_no    | VARCHAR(15)    | İletişim numarası                       |
+
+DERSLER TABLOSU:
+| Alan Adı      | Veri Türü      | Açıklama                                |
+|---------------|----------------|-----------------------------------------|
+| ders_kodu     | VARCHAR(10) PK | Her ders için benzersiz kod             |
+| ders_adi      | VARCHAR(100)   | Dersin adı                              |
+| kredi         | INT            | Dersin kredi sayısı                     |
+| ogretmen_id   | INT (FK)       | Dersi veren öğretmen kimliği            |
+
+ÖĞRETMENLER TABLOSU:
+| Alan Adı      | Veri Türü      | Açıklama                                |
+|---------------|----------------|-----------------------------------------|
+| ogretmen_id   | INT (PK)       | Öğretmene özel benzersiz kimlik         |
+| ad            | VARCHAR(50)    | Öğretmen adı                            |
+| soyad         | VARCHAR(50)    | Öğretmen soyadı                         |
+| bolum         | VARCHAR(100)   | Görev yaptığı bölüm                     |
+
+NOTLAR (DERS KAYIT) TABLOSU:
+| Alan Adı      | Veri Türü      | Açıklama                                |
+|---------------|----------------|-----------------------------------------|
+| kayit_id      | INT (PK)       | Her kayda özel benzersiz kimlik         |
+| ogrenci_no    | INT (FK)       | Notun ait olduğu öğrenci kimliği        |
+| ders_kodu     | VARCHAR(10) FK | Alınan dersin kodu                      |
+| vize_notu     | INT            | Vize sınav notu                         |
+| final_notu    | INT            | Final sınav notu                        |
+| gecme_notu    | FLOAT          | Hesaplanan geçme notu                   |
+
+
+
