@@ -1,0 +1,69 @@
+a={1,2,4,8]
+b={1,2,3,7]
+create database galeri
+
+create table musteri(
+mno int primary key identity(1,1),
+madi nvarchar(99),
+msoyadi nvarchar(99),
+madres nvarchar(99),
+mtelefon nvarchar(99));
+
+create table arac(
+aracno int primary key identity(1,1),
+model  nvarchar(99),
+marka nvarchar(99),
+plaka nvarchar(99),
+fiyat float);
+
+create table satislar(
+satisno int primary key not null,
+mno int foreign key (mno) references musteri(mno),
+aracno int foreign key (aracno) references arac(aracno),
+satistarihi  nvarchar(99),
+sfiyatı nvarchar(99));
+
+create table alicilar(
+alicino int primary key not null,
+mno int foreign key (mno) references musteri(mno),
+aracno int foreign key (aracno) references arac(aracno),
+alımtarihi  nvarchar(99),
+afiyatı nvarchar(99));
+
+select*from musteri 
+
+insert into musteri values('hakan','şen','sivas','545')
+
+insert into musteri values('zaza','öztürk','istanbul','4444')
+
+select*from arac
+
+insert into arac values('f455','fiat','45 tt 58',444.44)
+
+insert into arac values('gf457','fort','58 tt 58',555.44)
+
+select*from satislar 
+
+insert into satislar values(1,1,1,'14.12.2000',444.44)
+
+insert into satislar values(2,2,2,'14.12.2004',555.44)
+
+select*from alicilar 
+
+insert into alicilar values(1,1,1,'14.12.2000',444.44)
+
+insert into alicilar values(2,2,2,'14.12.2004',555.44)
+
+//1 soru
+select  madi msoyadi from satislar s join musteri m on M.mno=s.mno 
+
+//2 soru
+
+select (musteri.madi+''+musteri.msoyadi)as musteri,arac.model  from alicilar
+inner join musteri on musteri.mno=alicilar.mno
+inner join arac on arac.aracno=alicilar.aracno
+
+//3 soru
+
+ select count(a.mno)from alicilar as a 
+ inner join musteri as m on m.mno=a.mno
