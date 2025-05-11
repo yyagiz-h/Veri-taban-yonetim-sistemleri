@@ -1,0 +1,91 @@
+!--1.	Sıla Aydoğdu'ya satılan aracın aynısından başka hangi müşterilere satıldığını bulmak için kullanılacak SQL ifadesiniz yazınız.
+select (musteri.Madi +' '+ musteri.Msoyadi) as satilan_araclar
+from satislar
+Inner Join musteri on musteri.Mno = satislar.MNo
+where aracNo =
+(select AracNo from satislar
+where MNo =(select Mno from musteri 
+where Madi ='Sıla' and Msoyadi ='Aydoğdu'))
+
+!--2.	Satış yapılan araçların bilgilerini listelemek için gerekli SQL ifadesiniz yazınız.
+select musteri.Madi,araclar.marka,araclar.model,
+satislar.Fiyat from satislar
+inner join musteri on musteri.Mno = satislar.MNo
+inner join araclar on araclar.Aracno = satislar.AracNo
+where araclar.AracNo in (select AracNo from araclar)
+
+!--3.Satış tutarı alım tutarından düşük olan araçları listelemek için gerekli SQL ifadesini yazınız.
+select s.Fiyat, a.Fiyat, m.Madi from satislar as s
+inner join alislar as a on a.AracNo=s.AracNo
+inner join musteri as m on m.Mno=s.MNo
+where s.Fiyat < a.Fiyat
+
+SELECT s.Fiyat AS satis, a.Fiyat AS alis,m.Madi
+FROM satislar AS s
+INNER JOIN alislar AS a ON a.AracNo = s.AracNo
+INNER JOIN musteri AS m ON m.Mno = s.MNo
+WHERE s.Fiyat < (
+    SELECT MIN(Fiyat) 
+    FROM alislar 
+);
+
+
+4- Opel marka araç yapılan satışların ve alımların hangi müşterilerle yapıldığını bulmak için gerekli SQL ifadesini yazınız.
+
+SELECT DISTINCT m.*
+FROM Musteri m
+JOIN Satis s ON m.Mno = s.Mno
+JOIN Arac a ON s.Aracno = a.Aracno
+WHERE a.Marka LIKE '%Opel%';
+
+5- Araç fiyatı 20000 den yüksek olan araçların hangi fiyata satıldığını bulmak için gerekli SQL ifadesiniz yazınız.
+
+SELECT a.Marka, a.Model, a.Fiyat AS Arac_Fiyati, s.Sfiyat AS Satis_Fiyati
+FROM Arac a
+JOIN Satis s ON a.Aracno = s.Aracno
+WHERE a.Fiyat > 20000;
+
+6-   Turhal ve Amasya’ya yapılan satışların toplam tutarını azalan sırada listelemek için gerekli SQL ifadesiniz yazınız.
+
+SELECT m.Madres, SUM(s.Sfiyat) AS Toplam_Satis
+FROM Satis s
+JOIN Musteri m ON s.Mno = m.Mno
+WHERE m.Madres LIKE '%Turhal%' OR m.Madres LIKE '%Amasya%'
+GROUP BY m.Madres
+ORDER BY Toplam_Satis DESC;
+
+7-   Satış veya alım yapılmayan müşterilerin bilgilerini listelemek için gerekli SQL ifadesiniz yazınız.
+
+SELECT *
+FROM Musteri
+WHERE Mno NOT IN (SELECT Mno FROM Satis)
+  AND Mno NOT IN (SELECT Mno FROM Alim);
+
+8-  5.ve 6. Ayda yapılan satışların kimlere yapıldığını bulmak için gerekli SQL ifadesiniz yazınız.
+
+SELECT m.Madi, m.Msoyadi, s.Sat_tarih
+FROM Satis s
+JOIN Musteri m ON s.Mno = m.Mno
+WHERE MONTH(s.Sat_tarih) IN (5, 6);
+
+9-   Aynı marka araç alan müşterileri ve aldığı araç markasını listelemek için gerekli SQL ifadesiniz yazınız.
+
+SELECT m.Madi, m.Msoyadi, a.Marka
+FROM Alim al
+JOIN Musteri m ON al.Mno = m.Mno
+JOIN Arac a ON al.Aracno = a.Aracno
+WHERE a.Marka IN (
+    SELECT Marka
+    FROM Alim
+    JOIN Arac ON Alim.Aracno = Arac.Aracno
+    GROUP BY Marka
+    HAVING COUNT(DISTINCT Mno) > 1
+);
+
+10-   En yüksek fiyata satılan aracın marka, fiyat ve kime satıldığı bilgisini listelemek için gerekli SQL ifadesiniz yazınız.
+
+SELECT a.Marka, s.Sfiyat, m.Madi, m.Msoyadi
+FROM Satis s
+JOIN Arac a ON s.Aracno = a.Aracno
+JOIN Musteri m ON s.Mno = m.Mno
+WHERE s.Sfiyat = (SELECT MAX(Sfiyat) FROM Satis);
